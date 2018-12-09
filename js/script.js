@@ -38,7 +38,7 @@ function startexam() {
     var chour = hour;
     var cmin = min;
     var csec = sec;
-    //
+    //start test
     startminute = Math.ceil((cmin+1)/5)*5;//start minute
     starthour = chour+Math.floor(startminute/60);//start hour
     startminute = hourcheck(startminute);//override start minute
@@ -53,7 +53,7 @@ function startexam() {
     hl = checkTime(hourlasted);//hour lasted
     ml = checkTime(minlasted);//minute lasted
     document.getElementById('examlength').innerHTML = hl + ":" + ml + ":00";
-    //
+    //end test
     endminute = (startminute+minlasted)%60;
     endhour = starthour+hourlasted+Math.floor((startminute+minlasted)/60);
     em = checkTime(endminute);
