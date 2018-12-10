@@ -42,7 +42,7 @@ body, html {
     
 </style>
     
-<body onload="startTime()">
+<body onload="liveTime()">
     <button onclick="startexam()">Start exam</button>
     <p>current time:</p>
     <p id="alivetimer"></p>
@@ -52,11 +52,13 @@ body, html {
     <p id="endtime">00:00:00</p>
     <p>exam last for:</p>
     <p id="examlength">00:00:00</p>
+    <p>time remainning:</p>
+    <p onload="timecountdown()"id="timeremainning">00:00:00</p>
     <p>
         <select id="selecttest">
             <option value=1.25>Computer science</option>
             <option value=2>English</option>
-            <option value=2>Math</option>
+            <option value=2>Mathematics</option>
             <option value=1>Chinese</option>
         </select> 
     </p>
