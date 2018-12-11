@@ -2,7 +2,7 @@ var hour, min, sec;
 hour = today.getHours();
 min = today.getMinutes();
 sec = today.getSeconds();
-function startTime() {
+function liveTime() {
     var today = new Date();
     hour = today.getHours();
     min = today.getMinutes();
@@ -11,7 +11,7 @@ function startTime() {
     m = checkTime(min);
     s = checkTime(sec);
     document.getElementById('alivetimer').innerHTML = h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 250);
+    var live1 = setTimeout(liveTime, 250);
 }
 
 function checkTime(i) {
@@ -33,12 +33,27 @@ function hourcheck(i) {
     return i;
 }
 
+function timecountdown() {
+    sremain -= 1;
+    if (sremain == -1) {
+        sremain = 59;
+        mremain -= 1;
+    }
+    if (mremain == -1) {
+        mremain = 59;
+        hreamin -= 1;
+    }
+    document.getElementById('timeremainning').innerHTML = hreamin + ":" + mremain + ":" + sremain;
+    var live2 = setTimeout(timecountdown, 1000)
+    
+}
+
 function startexam() {
     //current
     var chour = hour;
     var cmin = min;
     var csec = sec;
-    //start test
+    //
     startminute = Math.ceil((cmin+1)/5)*5;//start minute
     starthour = chour+Math.floor(startminute/60);//start hour
     startminute = hourcheck(startminute);//override start minute
@@ -53,12 +68,19 @@ function startexam() {
     hl = checkTime(hourlasted);//hour lasted
     ml = checkTime(minlasted);//minute lasted
     document.getElementById('examlength').innerHTML = hl + ":" + ml + ":00";
-    //end test
+    //
     endminute = (startminute+minlasted)%60;
     endhour = starthour+hourlasted+Math.floor((startminute+minlasted)/60);
     em = checkTime(endminute);
     eh = checkTime(endhour);
     document.getElementById('endtime').innerHTML = eh + ":" + em  + ":" + "00";
+    //time remainning
+    sremain = 0;
+    mremain = minlasted;
+    hreamin = hourlasted;
+    timecountdown();
+    
+    ;
     //document.getElementById('testlog').innerHTML = 1;
 }
 
