@@ -48,8 +48,13 @@ function timecountdown() {
     
 }
 
+validate = false;
+
 function startexam() {
     //current
+    //liveTime();
+    
+    
     var chour = hour;
     var cmin = min;
     var csec = sec;
@@ -78,9 +83,16 @@ function startexam() {
     sremain = 0;
     mremain = minlasted;
     hreamin = hourlasted;
-    timecountdown();
-    
-    ;
-    //document.getElementById('testlog').innerHTML = 1;
+    console.log(validate);
+    if (!validate) {
+        timecountdown();
+        validate = true;
+    }
+    if (mremain == 30) {
+        alert("30 minutes left !");
+    }
+    else if (mremain == 5) {
+        alert("5 minute left !")
+    }
 }
 
