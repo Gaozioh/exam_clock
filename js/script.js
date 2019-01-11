@@ -1,4 +1,5 @@
 var hour, min, sec;
+var today = new Date();
 hour = today.getHours();
 min = today.getMinutes();
 sec = today.getSeconds();
