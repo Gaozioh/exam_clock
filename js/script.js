@@ -44,7 +44,10 @@ function timecountdown() {
         mremain = 59;
         hreamin -= 1;
     }
-    document.getElementById('timeremainning').innerHTML = hreamin + ":" + mremain + ":" + sremain;
+    rh = checkTime(hreamin);
+    rm = checkTime(mremain);
+    rs = checkTime(sremain);
+    document.getElementById('timeremainning').innerHTML = rh + ":" + rm + ":" + rs;
     var live2 = setTimeout(timecountdown, 1000)
     
 }
@@ -95,5 +98,17 @@ function startexam() {
     else if (mremain == 5) {
         alert("5 minute left !")
     }
+    //30 m warn
+    thwarnminute = (startminute+minlasted -30)%60;
+    thwarnhour = starthour+hourlasted+Math.floor((startminute+minlasted -30)/60);
+    tm = checkTime(thwarnminute);
+    th = checkTime(thwarnhour);
+    document.getElementById('30mwarn').innerHTML = th + ":" + tm  + ":" + "00";
+    //5 m warn
+    fiwarnminute = (startminute+minlasted -5)%60;
+    fiwarnhour = starthour+hourlasted+Math.floor((startminute+minlasted -5)/60);
+    fm = checkTime(fiwarnminute);
+    fh = checkTime(fiwarnhour);
+    document.getElementById('5mwarn').innerHTML = fh + ":" + fm  + ":" + "00";
 }
 

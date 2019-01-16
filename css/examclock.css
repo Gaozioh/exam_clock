@@ -1,0 +1,59 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif;
+    font-weight:400;
+    margin:1px 0;
+}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+.input {
+    width: 500px;
+}
+.center{
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    width:auto;
+    margin-top: 0;
+}
+.centertime{
+    margin-top: 0;
+}
+.bottomtime{
+    margin-bottom: 0;
+    bottom: 0px;
+}
+#css_table {
+    display:table;
+}
+.css_th {
+    display: table-header-group;
+}
+.css_tr {
+    display: table-row;
+}
+.css_tc {
+    display: table-column;
+}
+.css_td {
+    display: table-cell;
+}
+.button_input {
+    width: 500px;
+}
+.box {
+    float: none;
+    background-color: whitesmoke;
+
+    min-width: 100px;
+    max-width: 10000px;
+    min-height: 150px;
+    max-height: 10000px;
+
+    border: 25px solid white;   
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px;
+}

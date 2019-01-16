@@ -9,58 +9,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-        body, html {
-            height: 100%;
-            color: #777;
-            line-height: 1.8;
-        }
 
-        /* Create a Parallax Effect */
-        .bgimg-1, .bgimg-2, .bgimg-3 {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size:contain;
-        }
-        /* First image (Logo. Full height) */
-        .bgimg-1 {
-            background-image:url("0f2f87938a5fc81c3ee994d723c5bce5.jpeg");
-            min-height: 50%;
-        }
-
-
-        .w3-wide {letter-spacing: 10px;}
-        .w3-hover-opacity {cursor: pointer;}
-
-        /* Turn off parallax scrolling for tablets and phones */
-        @media only screen and (max-device-width: 1024px) {
-            .bgimg-1, .bgimg-2, .bgimg-3 {
-                background-attachment: scroll;
-            }
-        }
-        .input {
-            width: 500px;
-        }
-
-    </style>
-
-    <body onload="liveTime()">
+    <body onload="liveTime()" class="box">
         <button onclick="startexam()">Start exam</button>
+        <div class="center">
+            <p class="bottomtime" class="bottomtime">current time:</p>
+            <h1 class="centertime" id="alivetimer"></h1>
+        </div>
         
-        <p>current time:</p>
-        <p id="alivetimer"></p>
-        <p>exam start at:</p>
-        <p id="starttime">00:00:00</p>
-        <p>exam end at:</p>
-        <p id="endtime">00:00:00</p>
-        <p>exam last for:</p>
-        <p id="examlength">00:00:00</p>
-        <p>time remainning:</p>
-        <p onload="timecountdown()"id="timeremainning">00:00:00</p>
+        
+        
         <p>
-            <input class="input" placeholder="Select/Enter the course name" list="selecttest">
             <select id="selecttest">
                 <option value=1.25>Computer science</option>
                 <option value=2>English</option>
@@ -69,19 +28,62 @@
             </select> 
         </p>
 
-        <p id="testlog"></p>
-        
         <div id="css_table">
-              <div class="css_tr">
-                  <div class="css_td">標題</div>
-                  <div class="css_td">回應</div>
-                  <div class="css_td">日期</div>
-              </div>
-              <div class="css_tr">
-                  <div class="css_td">如何停用WordPress內建搜尋功能kkk？</div>
-                  <div class="css_td">5</div>
-                  <div class="css_td">2011-10-30</div>
-              </div>
+            <div class="css_tr">
+                <div class="css_td">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+                <div class="css_td">subject</div>
+            </div>
+            
+            <div class="css_tr">
+                <div class="css_td">
+                    <p>exam start at:</p>
+                </div>
+                <div class="css_td">
+                    <p id="starttime">00:00:00</p>
+                </div>
+            </div>
+            
+            <div class="css_tr">
+                <div class="css_td">
+                    <p>exam last for:</p>
+                </div>
+                <div class="css_td">
+                    <p id="examlength">00:00:00</p>
+                </div>
+            </div>
+            <div class="css_tr">
+                <div class="css_td">
+                    <p>30 minutes warning:</p>
+                </div>
+                <div class="css_td">
+                    <p id="30mwarn">00:00:00</p>
+                </div>
+            </div>
+            <div class="css_tr">
+                <div class="css_td">
+                    <p>5 minutes warning:</p>
+                </div>
+                <div class="css_td">
+                    <p id="5mwarn">00:00:00</p>
+                </div>
+            </div>
+            <div class="css_tr">
+                <div class="css_td">
+                    <p>exam end at:</p>
+                </div>
+                <div class="css_td">
+                    <p id="endtime">00:00:00</p>
+                </div>
+            </div>
+            <div class="css_tr">
+                <div class="css_td">
+                    <p>time remainning:</p>
+                </div>
+                <div class="css_td">
+                    <p onload="timecountdown()"id="timeremainning">00:00:00</p>
+                </div>
+            </div>
+            
         </div>
 
         <script src="js/script.js"></script>
